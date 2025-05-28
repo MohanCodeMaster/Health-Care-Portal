@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Healthcare Portal</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-heart-pulse me-2"></i>Healthcare Portal
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="contact-container">
+            <h1 class="contact-title">Get In Touch</h1>
+            <p class="contact-subtitle">We're here to help you with all your healthcare needs</p>
+            
+            <div class="row g-4">
+                <!-- Contact Form -->
+                <div class="col-lg-8">
+                    <div class="glass-card">
+                        <div class="success-message" id="successMessage">
+                            <i class="bi bi-check-circle me-2"></i>
+                            <span>Thank you! Your message has been sent successfully.</span>
+                        </div>
+                        
+                        <form id="contactForm" action="contact.jsp" method="post">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="name" class="form-label">
+                                        <i class="bi bi-person"></i>Full Name
+                                    </label>
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">
+                                        <i class="bi bi-envelope"></i>Email Address
+                                    </label>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="your@email.com" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="mobile" class="form-label">
+                                        <i class="bi bi-phone"></i>Mobile Number
+                                    </label>
+                                    <input type="tel" class="form-control" id="mobile" name="mobile" placeholder="10-digit number" pattern="[0-9]{10}" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="subject" class="form-label">
+                                        <i class="bi bi-chat-dots"></i>Subject
+                                    </label>
+                                    <select class="form-select" id="subject" name="subject" required>
+                                        <option value="" style = "color: black;">Select a topic</option>
+                                        <option value="general" style = "color: black;">General Inquiry</option>
+                                        <option value="hospital" style = "color: black;">Hospital Registration</option>
+                                        <option value="patient" style = "color: black;">Patient Support</option>
+                                        <option value="technical" style = "color: black;">Technical Support</option>
+                                        <option value="partnership" style = "color: black;">Partnership</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="message" class="form-label">
+                                        <i class="bi bi-chat-text"></i>Message
+                                    </label>
+                                   <textarea class="form-control" id="message" name="feedback" rows="5" placeholder="Tell us how we can help you..." required></textarea>
+							      </div>
+                                <div class="col-12">
+                                    <input type="submit" class="btn btn-glass" value="send message">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="col-lg-4">
+                    <div class="contact-info">
+                        <h3 class="mb-4" style="font-weight: 600;">Contact Information</h3>
+                        
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="bi bi-envelope"></i>
+                            </div>
+                            <div>
+                                <h5>Email Us</h5>
+                                <p>info@healthcareportal.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="bi bi-telephone"></i>
+                            </div>
+                            <div>
+                                <h5>Call Us</h5>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="bi bi-geo-alt"></i>
+                            </div>
+                            <div>
+                                <h5>Visit Us</h5>
+                                <p>123 Healthcare Ave, Medical District, City 12345</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="bi bi-clock"></i>
+                            </div>
+                            <div>
+                                <h5>Business Hours</h5>
+                                <p>Mon - Fri: 9:00 AM - 6:00 PM<br>
+                                   Sat: 10:00 AM - 4:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-2">© 2025 Healthcare Portal. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6">
+                    <p class="mb-0">
+                        <i class="bi bi-envelope me-2"></i>
+                        Emergency: <a href="mailto:emergency@healthcareportal.com">emergency@healthcareportal.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    
+</body>
+</html>

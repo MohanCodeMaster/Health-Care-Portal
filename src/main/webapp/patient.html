@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Token Registration - Healthcare Portal</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="patient.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-heart-pulse me-2"></i>Healthcare Portal
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="token-container">
+            <h1 class="token-title">Token Registration</h1>
+            <p class="token-subtitle">Book your appointment slot easily</p>
+            
+            <div class="glass-card">
+                <div class="token-icon">
+                    <i class="bi bi-calendar2-check"></i>
+                </div>
+                
+                <div class="time-slot-info">
+                    <i class="bi bi-info-circle"></i>
+                    <strong>Available Time Slots:</strong> Morning (9AM-12PM) & Evening (3PM-7PM)
+                </div>
+                
+                <form action="storeToken.jsp" method="post">
+                    <div class="mb-4">
+                        <label for="username" class="form-label">
+                            <i class="bi bi-person"></i>Full Name
+                        </label>
+                        <input type="text" class="form-control" id="username" name="name" placeholder="Enter your full name" required>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="mobile" class="form-label">
+                            <i class="bi bi-phone"></i>Mobile Number
+                        </label>
+                        <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Enter 10-digit mobile number" pattern="[0-9]{10}" required>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="slot" class="form-label">
+                            <i class="bi bi-clock"></i>Select Time Slot
+                        </label>
+                        <select class="form-select" id="slot" name="shift" required>
+                            <option value="">-- Choose Your Preferred Time --</option>
+                            <option value="Morning Slot 9am-12pm">🌅 Morning Slot (9:00 AM - 12:00 PM)</option>
+                            <option value="Evening Slot 2-3pm">🌆 Evening Slot (3:00 PM - 7:00 PM)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-glass">
+                        <i class="bi bi-ticket-perforated me-2"></i>Get Your Token
+                    </button>
+                </form>
+                
+                <div class="divider">
+                    <span>or</span>
+                </div>
+                
+                <div class="hospital-link">
+                    <p class="mb-0">Hospital Staff? <a href="hospital.html">Login to Admin Panel</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-2">© 2025 Healthcare Portal. All Rights Reserved.</p>
+                </div>
+                <div class="col-md-6">
+                    <p class="mb-0">
+                        <i class="bi bi-envelope me-2"></i>
+                        Support: <a href="mailto:support@healthcareportal.com">support@healthcareportal.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+     
+
+     
+        // Enhanced form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const mobile = document.getElementById('mobile').value;
+            if (mobile.length !== 10) {
+                e.preventDefault();
+                alert('Please enter a valid 10-digit mobile number');
+                return;
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+
+        // Enhanced form submission validation
+        document.querySelector('form').addEventListener('submit', function (e) {
+            const mobileInput = document.getElementById('mobile');
+            const mobileValue = mobileInput.value.trim();
+
+            // Basic check for 10-digit number
+            if (!/^\d{10}$/.test(mobileValue)) {
+                e.preventDefault(); // Prevent form submission
+                alert("Please enter a valid 10-digit mobile number.");
+                mobileInput.focus();
+                return false;
+            }
+
+            // Optional: check that name is not empty or too short
+            const nameInput = document.getElementById('username');
+            const nameValue = nameInput.value.trim();
+
+            if (nameValue.length < 3) {
+                e.preventDefault();
+                alert("Please enter a valid full name (at least 3 characters).");
+                nameInput.focus();
+                return false;
+            }
+
+            // Optional: ensure slot is selected
+            const slotSelect = document.getElementById('slot');
+            if (slotSelect.value === "") {
+                e.preventDefault();
+                alert("Please select a time slot.");
+                slotSelect.focus();
+                return false;
+            }
+        });
+
+
+    </script>
+</body>
+</html>
