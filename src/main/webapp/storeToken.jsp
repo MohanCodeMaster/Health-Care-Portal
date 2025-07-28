@@ -5,7 +5,7 @@
     String mobile = request.getParameter("mobile");
     String shift = request.getParameter("shift"); // Get shift from form
 
-    // Generate a 25-character alphanumeric token with timestamp
+    // Generate a 12-character alphanumeric token with timestamp
     String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     StringBuilder tokenBuilder = new StringBuilder();
     Random rand = new Random();
@@ -18,9 +18,10 @@
     String token = "TKN-" + timestamp + "-" + tokenBuilder.toString();
 
     // Database connection details
-    String dbURL = "jdbc:mysql://localhost:3306/tokensystem";
-    String dbUser = "root";
-    String dbPass = "mohan";
+   	String dbURL = "jdbc:mysql://sql12.freesqldatabase.com:3306/sql12790829";
+	String dbUser = "sql12790829";
+	String dbPass = "nhJQwmiMc1";
+
 
     Connection conn = null;
     PreparedStatement pstmt = null;

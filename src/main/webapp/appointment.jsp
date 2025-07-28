@@ -1,9 +1,9 @@
 <%@ page import="java.sql.*" %>
 <%
     // Database connection details
-    String dbURL = "jdbc:mysql://localhost:3306/tokensystem";
-    String dbUser = "root";
-    String dbPass = "mohan";
+    String dbURL = "jdbc:mysql://sql12.freesqldatabase.com:3306/sql12790829";
+	String dbUser = "sql12790829";
+	String dbPass = "nhJQwmiMc1";
 
     Connection conn = null;
     PreparedStatement pstmt = null;

@@ -10,8 +10,12 @@
     // out.println("Feedback: " + feedback);
 
     try {
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tokensystem", "root", "mohan");
+        Class.forName("com.mysql.cj.jdbc.Driver");  
+        Connection con = DriverManager.getConnection(
+                "jdbc:mysql://sql12.freesqldatabase.com:3306/sql12790829",
+                "sql12790829",
+                "nhJQwmiMc1"
+            );
 
         String sql = "INSERT INTO contact (name, email, phone, subject, feedback) VALUES (?, ?, ?, ?, ?)";
         PreparedStatement pst = con.prepareStatement(sql);
@@ -23,11 +27,11 @@
 
         int row = pst.executeUpdate();
         if (row > 0) 
-          
+        
            %>
            <script>
            		alert("Thanks for your Feedback");
-           		window.location.href("index.html");
+           		window.location.href="index.html";
            </script>
 <%
 
